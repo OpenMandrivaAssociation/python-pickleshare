@@ -10,7 +10,7 @@ URL:            https://github.com/pickleshare/pickleshare
 Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
  
-BuildRequires:  python-setuptools
+BuildRequires:  python2-setuptools
 BuildRequires:  python2-devel
  
 BuildRequires:  python-setuptools
