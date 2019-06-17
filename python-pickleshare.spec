@@ -56,35 +56,21 @@ sed -i 's/\/usr\/bin\/env python/\/usr\/bin\/python/' pickleshare.py
 cp -a . %py2dir
 
 %build
-python setup.py build
+%py_build
 pushd %py2dir
 python2 setup.py build
 
 %install
-python setup.py install --root=%buildroot
+%py_install
 pushd %py2dir
-python2 setup.py install --root=%buildroot
+python2 setup.py install --root=%{buildroot}
 
 %files -n python2-%{pypi_name} 
-%{python2_sitelib}/%{pypi_name}.py*
-%{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{py_puresitedir}/%{pypi_name}.py*
+%{py_puresitedir}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %files
-%{python3_sitelib}/%{pypi_name}.py
-%{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{py3_puresitedir}/%{pypi_name}.py
+%{py3_puresitedir}/%{pypi_name}-%{version}-py?.?.egg-info
+%{py3_puresitedir}/__pycache__/*
 
-%changelog
-* Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 0.7.4-4
-- Rebuild for Python 3.6
-
-* Wed Nov 16 2016 Mukundan Ragavan <nonamedotc@fedoraproject.org> - 0.7.4-3
-- Do not own __pycache__ dir
-
-* Sat Oct 01 2016 Mukundan Ragavan <nonamedotc@fedoraproject.org> - 0.7.4-2
-- Fix typos and interpreter strings
-
-* Sat Sep 24 2016 Mukundan Ragavan <nonamedotc@fedoraproject.org> - 0.7.4-1
-- Update to 0.7.4
-
-* Fri Aug 12 2016 Mukundan Ragavan <nonamedotc@gmail.com> - 0.7.3-1
-- Initial package.
