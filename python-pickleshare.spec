@@ -66,8 +66,8 @@ pushd %py2dir
 python2 setup.py install --root=%{buildroot}
 
 %files -n python2-%{pypi_name} 
-%{py_puresitedir}/%{pypi_name}.py*
-%{py_puresitedir}/%{pypi_name}-%{version}-py?.?.egg-info
+%{py2_puresitedir}/%{pypi_name}.py*
+%{py2_puresitedir}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %files
 %{py3_puresitedir}/%{pypi_name}.py
