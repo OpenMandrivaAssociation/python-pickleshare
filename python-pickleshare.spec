@@ -1,13 +1,13 @@
 %global pypi_name pickleshare
 
 Name:           python-%{pypi_name}
-Version:        0.7.4
-Release:        1
+Version:	0.7.5
+Release:	1
 Summary:        Tiny 'shelve'-like database with concurrency support
 
 License:        MIT
 URL:            https://github.com/pickleshare/pickleshare
-Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/d8/b6/df3c1c9b616e9c0edbc4fbab6ddd09df9535849c64ba51fcb6531c32d4d8/pickleshare-0.7.5.tar.gz
 BuildArch:      noarch
  
 BuildRequires:  python2-setuptools
