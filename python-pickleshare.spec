@@ -2,12 +2,12 @@
 
 Name:           python-%{pypi_name}
 Version:	0.7.5
-Release:	2
+Release:	3
 Summary:        Tiny 'shelve'-like database with concurrency support
 
 License:        MIT
 URL:            https://github.com/pickleshare/pickleshare
-Source0:	https://files.pythonhosted.org/packages/d8/b6/df3c1c9b616e9c0edbc4fbab6ddd09df9535849c64ba51fcb6531c32d4d8/pickleshare-0.7.5.tar.gz
+Source0:	https://files.pythonhosted.org/packages/d8/b6/df3c1c9b616e9c0edbc4fbab6ddd09df9535849c64ba51fcb6531c32d4d8/pickleshare-%{version}.tar.gz
 BuildArch:      noarch
  
 BuildRequires:  python-setuptools
@@ -41,5 +41,4 @@ sed -i 's/\/usr\/bin\/env python/\/usr\/bin\/python/' pickleshare.py
 
 %files
 %{py3_puresitedir}/%{pypi_name}.py
-%{py3_puresitedir}/%{pypi_name}-%{version}-py?.?.egg-info
-%{py3_puresitedir}/__pycache__/*
+%{py3_puresitedir}/%{pypi_name}-%{version}-py*.*.egg-info
