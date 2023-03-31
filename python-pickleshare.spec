@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:	0.7.5
-Release:	3
+Release:	4
 Summary:        Tiny 'shelve'-like database with concurrency support
 
 License:        MIT
