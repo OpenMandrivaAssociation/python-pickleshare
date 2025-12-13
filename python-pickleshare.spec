@@ -2,16 +2,16 @@
 
 Name:           python-%{pypi_name}
 Version:	0.7.5
-Release:	7
+Release:	8
 Summary:        Tiny 'shelve'-like database with concurrency support
 
 License:        MIT
-URL:            https://github.com/pickleshare/pickleshare
-Source0:	https://files.pythonhosted.org/packages/d8/b6/df3c1c9b616e9c0edbc4fbab6ddd09df9535849c64ba51fcb6531c32d4d8/pickleshare-%{version}.tar.gz
+URL:            https://github.com/ipython/pickleshare
+Source0:	https://files.pythonhosted.org/packages/source/p/pickleshare/pickleshare-%{version}.tar.gz
 BuildArch:      noarch
  
+BuildSystem:	python
 BuildRequires:  python%{pyver}dist(setuptools)
-BuildRequires:  python-devel
 
 %description
 PickleShare - a small 'shelve' like data store with concurrency support.
@@ -25,20 +25,6 @@ Concurrency is possible because the values are stored in separate files.
 Hence the "database" is a directory where all files are governed 
 by PickleShare.
 
-%prep
-%autosetup -p1 -n %{pypi_name}-%{version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
-
-# fix interpreter
-sed -i 's/\/usr\/bin\/env python/\/usr\/bin\/python/' pickleshare.py
-
-%build
-%py_build
-
-%install
-%py_install
-
 %files
-%{py3_puresitedir}/%{pypi_name}.py
-%{py3_puresitedir}/%{pypi_name}-%{version}-py*.*.egg-info
+%{py_puresitedir}/%{pypi_name}.py
+%{py_puresitedir}/%{pypi_name}-%{version}-py*.*.egg-info
